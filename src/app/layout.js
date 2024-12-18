@@ -44,11 +44,10 @@ export default function RootLayout({ children }) {
                   </span>
                </div>
             </div>
-            <div className="bg-white w-[86%] md:w-[92%]  lg:w-[82%] xl:w-[86%]">
+            <div className="bg-white w-[86%] md:w-[92%] py-4 px-3  lg:w-[82%] xl:w-[86%]">
                <HeaderPanel />
+               {children}
             </div>
-
-            {/* {children} */}
          </body>
       </html>
    );

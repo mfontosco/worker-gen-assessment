@@ -15,11 +15,16 @@ import { MdEditRoad } from 'react-icons/md';
 import { FaShareSquare } from 'react-icons/fa';
 const HeaderPanel = () => {
    return (
-      <div>
-         <div className=" hidden shadow-md px-2 md:flex items-center rounded-md">
+      <div className="shadow-lg py-2 border-2 rounded-md">
+         <div className="hidden  px-2 md:flex items-center rounded-md">
             <div className="flex items-center gap-2 mr-auto">
-               <h2 className="font-medium text-sm">My open leads</h2>
-               <MdOutlineKeyboardArrowDown size={16} />
+               <h2 className="font-medium text-xs no-wrap text-[#939393]">
+                  My open leads
+               </h2>
+               <MdOutlineKeyboardArrowDown
+                  size={16}
+                  className="text-[#939393]"
+               />
             </div>
             <div className="flex gap-4 items-center">
                <HeaderComponent
@@ -74,7 +79,10 @@ const HeaderPanel = () => {
                <HeaderButton icon={<MdEditRoad />} text={'Edit columns'} />
             </div>
             <div className="bg-blue-600 flex items-center rounded-sm   py-2 px-2">
-               <FaShareSquare className="text-white mr-2 cursor-pointer " />
+               <FaShareSquare
+                  size={12}
+                  className="text-white  mr-2 cursor-pointer "
+               />
                <MdOutlineKeyboardArrowDown
                   size={16}
                   className="text-white pl-1 cursor-pointer border-5 border-l  "
