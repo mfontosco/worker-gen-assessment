@@ -13,6 +13,7 @@ import HeaderButton from './HeaderButton';
 import { IoFilter } from 'react-icons/io5';
 import { MdEditRoad } from 'react-icons/md';
 import { FaShareSquare } from 'react-icons/fa';
+import { BsMicrosoftTeams } from 'react-icons/bs';
 const HeaderPanel = () => {
    return (
       <div className="shadow-lg py-2 border-2 rounded-md">
@@ -31,7 +32,7 @@ const HeaderPanel = () => {
                   icon={
                      <FaChartLine
                         size={12}
-                        className="text-green-300 font-medium"
+                        className="text-[#a6bae1]  font-medium"
                      />
                   }
                   text={'Show chart'}
@@ -40,7 +41,7 @@ const HeaderPanel = () => {
                   icon={
                      <TfiMenuAlt
                         size={12}
-                        className="text-green-300 font-medium"
+                        className="text-[#a6bae1] font-medium"
                      />
                   }
                   text={'Focused View'}
@@ -49,7 +50,7 @@ const HeaderPanel = () => {
                   icon={
                      <IoMdAdd
                         size={12}
-                        className="text-green-300 font-medium"
+                        className="text-[#a6bae1]  font-medium"
                      />
                   }
                   text={'New'}
@@ -59,9 +60,7 @@ const HeaderPanel = () => {
                   text={'Refresh'}
                />
                <HeaderComponent
-                  icon={
-                     <BsFillCameraReelsFill size={12} className="font-medium" />
-                  }
+                  icon={<BsMicrosoftTeams size={12} className="font-medium" />}
                   text={'Collaborate'}
                />
                <HeaderComponent
