@@ -24,6 +24,8 @@ import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 import { RiFileCopyLine } from 'react-icons/ri';
 import { PiPhoneIncoming } from 'react-icons/pi';
 import { BsMicrosoftTeams } from 'react-icons/bs';
+import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 
 const menuItems = [
    {
@@ -100,7 +102,7 @@ const menuItems = [
          {
             icon: <PiPhoneIncoming size={16} />,
             label: 'Leads',
-            href: '/leads',
+            href: '/',
             visible: '',
          },
          {
@@ -179,6 +181,7 @@ const menuItems = [
 
 const Menu = () => {
    const [openDropdown, setOpenDropdown] = useState(null);
+   const pathname = usePathname;
 
    const toggleDropdown = (label) => {
       setOpenDropdown(openDropdown === label ? null : label); // Toggle the dropdown
@@ -186,33 +189,31 @@ const Menu = () => {
    return (
       <div className="text-sm py-2">
          {menuItems.map((menu) => (
-            <div className="flex flex-col mb-2" key={menu.id}>
-               {menu.title && (
-                  <span className="hidden   lg:block text-gray-700 font-semibold">
-                     {menu.title}
-                  </span>
-               )}
+            <div className="flex flex-col mb-4" key={menu.id}>
                {menu.items?.map((item) => (
                   <div key={item.label} className="relative">
                      <div
-                        className={`md:flex w-full items-center cursor-pointer justify-between lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-lamaSkyLight ${
-                           item.subItems ? 'cursor-pointer' : ''
+                        className={`md:flex items-center justify-between lg:justify-start gap-4 py-2 md:px-2 rounded-md ${
+                           pathname === item.href
+                              ? 'bg-blue-500 text-white'
+                              : 'text-gray-600 hover:bg-gray-100 hover:text-blue-500'
                         }`}
-                        onClick={() =>
-                           item.subItems && toggleDropdown(item.label)
-                        }
                      >
                         <div className="flex items-center gap-2">
                            <span className="text-[#939393] font-bold">
                               {item.icon}
                            </span>
-                           <span className="hidden lg:block text-xs">
-                              {item.label}
-                           </span>
+                           <Link href={item.href}>
+                              <span className="hidden lg:block text-sm">
+                                 {item.label}
+                              </span>
+                           </Link>
                         </div>
-                        {/* Dropdown arrow */}
                         {item.subItems && (
-                           <span className="text-[#939393]">
+                           <span
+                              className="cursor-pointer text-[#939393]"
+                              onClick={() => toggleDropdown(item.label)}
+                           >
                               {openDropdown === item.label ? (
                                  <MdOutlineKeyboardArrowUp />
                               ) : (
@@ -229,7 +230,11 @@ const Menu = () => {
                               <Link
                                  href={subItem.href}
                                  key={subItem.label}
-                                 className="block py-1 text-gray-500 hover:text-gray-700"
+                                 className={`block py-1 px-2 rounded-md ${
+                                    pathname === subItem.href
+                                       ? 'bg-blue-100 text-blue-600'
+                                       : 'text-gray-600 hover:bg-gray-200 hover:text-blue-500'
+                                 }`}
                               >
                                  {subItem.label}
                               </Link>

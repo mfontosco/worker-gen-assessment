@@ -24,8 +24,8 @@ export default function RootLayout({ children }) {
    return (
       <html lang="en">
          <body className="flex min-h-screen">
-            <div className="relative bg-white py-2 border-r border-2 w-[14%] md:w-[8%] lg:w-[18%] xl:w-[14%] ">
-               <div className="px-2">
+            <div className="relative bg-[#efefef] py-2 border-r border-2 w-[14%] md:w-[8%] lg:w-[18%] xl:w-[14%] ">
+               <div className="px-2 ">
                   <RxHamburgerMenu size={20} className="text-black ml-2 " />
                   <Menu />
                </div>
