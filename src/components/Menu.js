@@ -187,7 +187,7 @@ const Menu = () => {
       setOpenDropdown(openDropdown === label ? null : label); // Toggle the dropdown
    };
    return (
-      <div className="text-sm py-2">
+      <div className="text-xs py-2">
          {menuItems.map((menu) => (
             <div className="flex flex-col mb-4" key={menu.id}>
                {menu.items?.map((item) => (
@@ -195,8 +195,8 @@ const Menu = () => {
                      <div
                         className={`md:flex items-center justify-between lg:justify-start gap-4 py-2 md:px-2 rounded-md ${
                            pathname === item.href
-                              ? 'bg-blue-500 text-white'
-                              : 'text-gray-600 hover:bg-gray-100 hover:text-blue-500'
+                              ? 'bg-gray-500 text-white'
+                              : 'text-gray-600 hover:bg-gray-100 hover:text-gray-500'
                         }`}
                      >
                         <div className="flex items-center gap-2">
@@ -204,7 +204,7 @@ const Menu = () => {
                               {item.icon}
                            </span>
                            <Link href={item.href}>
-                              <span className="hidden lg:block text-sm">
+                              <span className="hidden lg:block text-xs">
                                  {item.label}
                               </span>
                            </Link>
@@ -232,8 +232,8 @@ const Menu = () => {
                                  key={subItem.label}
                                  className={`block py-1 px-2 rounded-md ${
                                     pathname === subItem.href
-                                       ? 'bg-blue-100 text-blue-600'
-                                       : 'text-gray-600 hover:bg-gray-200 hover:text-blue-500'
+                                       ? 'bg-blue-100 text-gray-600'
+                                       : 'text-gray-600 hover:bg-gray-200 hover:text-gray-500'
                                  }`}
                               >
                                  {subItem.label}
