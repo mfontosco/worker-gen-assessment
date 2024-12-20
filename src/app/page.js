@@ -1,5 +1,8 @@
+'use client';
+import { useState } from 'react';
 import HeaderPanel from '@/components/HeaderPanel';
 import Layout from '@/components/Layout';
+import Modal from '@/components/Modal';
 import Table from '@/components/Table';
 import { TopLead } from '@/components/TopLead';
 const tableData = [
@@ -76,10 +79,21 @@ const tableData = [
 ];
 
 export default function Home() {
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   //    <button
+   //    className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+   //    onClick={() => setIsModalOpen(true)}
+   //  >
+   //    Open Modal
+   //  </button>
+   const onChangeHandler = () => {
+      setIsModalOpen(true);
+   };
    return (
-      <div className="bg-white text-black min-h-screen">
-         <TopLead />
+      <div className="bg-white text-black min-h-screen ">
+         <TopLead setModalOpen={onChangeHandler} />
          <Table />
+         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
    );
 }

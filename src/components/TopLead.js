@@ -7,7 +7,9 @@ import OtherKeyActivities from './OtherKeyActivities';
 import Star from '../../public/images/Stars.svg';
 import group from '../../public/images/Group.svg';
 import colorProfile from '../../public/images/prof.svg';
-export const TopLead = () => {
+import { RiMailUnreadLine } from 'react-icons/ri';
+import { LuCalendarDays } from 'react-icons/lu';
+export const TopLead = ({ setModalOpen }) => {
    return (
       <div className="shadow-lg rounded-md py-4 px-4 border-10 w-full border-black mt-2 h-[300px]">
          <div className="flex  items-center 2xl:items-start mb-4">
@@ -33,11 +35,48 @@ export const TopLead = () => {
                </h2>
                <div className=" w-full flex gap-2">
                   <div className="w-1/2">
-                     <CopilotInsights />
+                     <CopilotInsights
+                        setModalOpen={setModalOpen}
+                        icon={<RiMailUnreadLine />}
+                        name={'Jane Reyes'}
+                        company={'COO Northwind Traders'}
+                        title={'Engage with Jane Reyes'}
+                        content={
+                           'Jane maybe interested in upgrading expresso for her in-store coffee shop'
+                        }
+                        subTitle={'Expand Business'}
+                        subtopic={'High buying Intent'}
+                     />
                   </div>
                   <div className="w-1/2">
-                     <CopilotInsights />
+                     <CopilotInsights
+                        icon={<LuCalendarDays />}
+                        setModalOpen={setModalOpen}
+                        name={'Alian Munger'}
+                        company={
+                           'Head of Real Estate Development Contoso Coffee'
+                        }
+                        title={'Prepare for meeting with Alian'}
+                        content={
+                           'Prepare for high-buying intent meeting Copilot scheduled for 2PM regarding upgrading service contract'
+                        }
+                        subTitle={'Upcoming meeting'}
+                        subtopic={'Due today'}
+                     />
                   </div>
+               </div>
+               <div className="w-16 mx-auto mt-4 rounded h-1 flex overflow-hidden">
+                  <section className="w-[48%] bg-blue-700"></section>
+                  <section className="w-[5%] "> </section>
+                  <section className="w-[5%] bg-gray-300 rounded-full">
+                     {' '}
+                  </section>
+                  <section className="w-[5%] "> </section>
+                  <section className="w-[5%] bg-gray-300 rounded-full"></section>
+                  <section className="w-[5%] "> </section>
+                  <section className="w-[5%] bg-gray-300 rounded-full"></section>
+                  <section className="w-[5%] "> </section>
+                  <section className="w-[5%] bg-gray-300 rounded-full"></section>
                </div>
             </div>
             <div className="w-[30%] border-l ml-2 pl-2 border-[#93929546] ">
@@ -45,10 +84,29 @@ export const TopLead = () => {
                   <h2 className="mt-2 text-[#939295]">Other Key Activities</h2>
                </div>
                <div className="mb-2 mt-2 pl-2">
-                  <OtherKeyActivities profile={colorProfile} />
+                  <OtherKeyActivities
+                     profile={colorProfile}
+                     icon={<RiMailUnreadLine />}
+                     title={'Cafe A100 for Woodland Bank'}
+                     subtitle={'Woodland Bank . $280,000 . 8 days to go'}
+                     content={'Review draft and reply to Chris Naido'}
+                  />
                </div>
                <div className="mt-4 pl-2">
-                  <OtherKeyActivities profile={group} />
+                  <OtherKeyActivities
+                     profile={group}
+                     icon={<LuCalendarDays />}
+                     title={'Partnership opportunity for Fabrikam'}
+                     subtitle={'Fabrikam . %5,000,000 12 days to go'}
+                     content={
+                        'Prepare me for Fabrikam&aposs key stakeholder meeting'
+                     }
+                  />
+               </div>
+               <div>
+                  <h3 className="text-[#7387ba] text-[10px] mt-2">
+                     Show all key activities
+                  </h3>
                </div>
             </div>
          </div>

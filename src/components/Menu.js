@@ -23,10 +23,11 @@ import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 import { RiFileCopyLine } from 'react-icons/ri';
 import { PiPhoneIncoming } from 'react-icons/pi';
-import { BsMicrosoftTeams } from "react-icons/bs";
+import { BsMicrosoftTeams } from 'react-icons/bs';
 
 const menuItems = [
    {
+      id: 1,
       items: [
          {
             icon: <LiaHomeSolid size={16} />,
@@ -51,6 +52,7 @@ const menuItems = [
       ],
    },
    {
+      id: 2,
       title: 'My work',
       items: [
          {
@@ -74,6 +76,7 @@ const menuItems = [
       ],
    },
    {
+      id: 3,
       title: 'Customers',
       items: [
          {
@@ -91,6 +94,7 @@ const menuItems = [
       ],
    },
    {
+      id: 4,
       title: 'Sales',
       items: [
          {
@@ -114,6 +118,7 @@ const menuItems = [
       ],
    },
    {
+      id: 5,
       title: 'Collateral',
       items: [
          {
@@ -149,6 +154,7 @@ const menuItems = [
       ],
    },
    {
+      id: 6,
       title: 'Marketing',
       items: [
          {
@@ -166,6 +172,7 @@ const menuItems = [
       ],
    },
    {
+      id: 7,
       title: 'Performances',
    },
 ];
@@ -179,7 +186,7 @@ const Menu = () => {
    return (
       <div className="text-sm py-2">
          {menuItems.map((menu) => (
-            <div className="flex flex-col mb-2" key={menu.title}>
+            <div className="flex flex-col mb-2" key={menu.id}>
                {menu.title && (
                   <span className="hidden   lg:block text-gray-700 font-semibold">
                      {menu.title}

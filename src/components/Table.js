@@ -82,7 +82,7 @@ function classNames(...classes) {
    return classes.filter(Boolean).join(' ');
 }
 
-export default function Example() {
+export default function Table({ onchangeHandler }) {
    const checkbox = useRef();
    const [checked, setChecked] = useState(false);
    const [indeterminate, setIndeterminate] = useState(false);
@@ -175,8 +175,9 @@ export default function Example() {
                                     <div className="flex justify-start">
                                        Created on
                                        <GoArrowDown
+                                          onClick={onchangeHandler}
                                           size={18}
-                                          className="text-[#939393]"
+                                          className="text-[#939393] cursor-pointer"
                                        />
                                        <MdOutlineKeyboardArrowDown
                                           size={20}
