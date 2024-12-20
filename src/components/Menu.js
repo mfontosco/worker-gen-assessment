@@ -24,8 +24,6 @@ import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 import { RiFileCopyLine } from 'react-icons/ri';
 import { PiPhoneIncoming } from 'react-icons/pi';
 import { BsMicrosoftTeams } from 'react-icons/bs';
-import { useLocation } from 'react-router-dom';
-import { usePathname } from 'next/navigation';
 
 const menuItems = [
    {
@@ -73,6 +71,12 @@ const menuItems = [
             icon: <MdOutlineNoteAlt size={16} />,
             label: 'Activities',
             href: '/activities',
+            visible: '',
+         },
+         {
+            icon: <MdOutlineNoteAlt size={16} />,
+            label: 'Agent Skill',
+            href: '/agent-skills',
             visible: '',
          },
       ],
@@ -181,39 +185,43 @@ const menuItems = [
 
 const Menu = () => {
    const [openDropdown, setOpenDropdown] = useState(null);
-   const pathname = usePathname;
 
    const toggleDropdown = (label) => {
       setOpenDropdown(openDropdown === label ? null : label); // Toggle the dropdown
    };
    return (
-      <div className="text-xs py-2">
+      <div className="text-sm py-2">
          {menuItems.map((menu) => (
-            <div className="flex flex-col mb-4" key={menu.id}>
+            <div className="flex flex-col mb-2" key={menu.id}>
+               {menu.title && (
+                  <span className="hidden   lg:block text-gray-700 font-semibold">
+                     {menu.title}
+                  </span>
+               )}
                {menu.items?.map((item) => (
                   <div key={item.label} className="relative">
                      <div
-                        className={`md:flex items-center justify-between lg:justify-start gap-4 py-2 md:px-2 rounded-md ${
-                           pathname === item.href
-                              ? 'bg-gray-500 text-white'
-                              : 'text-gray-600 hover:bg-gray-100 hover:text-gray-500'
+                        className={`md:flex w-full items-center cursor-pointer justify-between lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-gray-200 hover:text-gray-600 ${
+                           item.subItems ? 'cursor-pointer' : ''
                         }`}
+                        onClick={() =>
+                           item.subItems && toggleDropdown(item.label)
+                        }
                      >
                         <div className="flex items-center gap-2">
                            <span className="text-[#939393] font-bold">
                               {item.icon}
                            </span>
-                           <Link href={item.href}>
-                              <span className="hidden lg:block text-xs">
-                                 {item.label}
-                              </span>
+                           <Link
+                              href={item.href}
+                              className="hidden lg:block text-xs"
+                           >
+                              {item.label}
                            </Link>
                         </div>
+                        {/* Dropdown arrow */}
                         {item.subItems && (
-                           <span
-                              className="cursor-pointer text-[#939393]"
-                              onClick={() => toggleDropdown(item.label)}
-                           >
+                           <span className="text-[#939393]">
                               {openDropdown === item.label ? (
                                  <MdOutlineKeyboardArrowUp />
                               ) : (
@@ -230,11 +238,7 @@ const Menu = () => {
                               <Link
                                  href={subItem.href}
                                  key={subItem.label}
-                                 className={`block py-1 px-2 rounded-md ${
-                                    pathname === subItem.href
-                                       ? 'bg-blue-100 text-gray-600'
-                                       : 'text-gray-600 hover:bg-gray-200 hover:text-gray-500'
-                                 }`}
+                                 className="block py-1 text-gray-500 hover:bg-black rounded-md px-2 hover:text-gray-700"
                               >
                                  {subItem.label}
                               </Link>

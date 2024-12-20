@@ -16,7 +16,7 @@ import { FaShareSquare } from 'react-icons/fa';
 import { BsMicrosoftTeams } from 'react-icons/bs';
 const HeaderPanel = () => {
    return (
-      <div className="shadow-lg py-2 border-2 rounded-md">
+      <div className="shadow-lg hidden lg:block py-2 border-2 rounded-md">
          <div className="hidden  px-2 md:flex items-center rounded-md">
             <div className="flex items-center gap-2 mr-auto">
                <h2 className="font-medium text-xs no-wrap text-[#939393]">

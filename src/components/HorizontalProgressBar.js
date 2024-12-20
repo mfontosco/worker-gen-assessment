@@ -46,7 +46,7 @@ const HorizontalProgressBarWithLabels = () => {
                </p>
             </div>
             <div className="flex ">
-               <div className="h-6 absolute bottom-5  mr-1 border border-[#939295]"></div>
+               <div className="h-6 absolute bottom-8 lg:bottom-5  mr-1 border border-[#939295]"></div>
                <div className="flex gap-4 text-[9px] ml-1">
                   <h2 className="">
                      <span className="text-[#939295]">Target</span> $45 million

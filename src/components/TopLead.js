@@ -31,11 +31,11 @@ export const TopLead = ({ setModalOpen }) => {
          </div>
          <div className="w-full flex flex-col lg:flex-row text-sm mr-1 mt-4">
             <div className="w-full lg:w-[70%] ">
-               <h2 className="text-xs text-[#939295]  my-4">
+               <h2 className="text-xs text-[#939295] my-1  lg:my-4">
                   Copilot hasa pinpointed 20 key leads that show strong purchase
                   intent and are actively engaging.These leads needs your focus
                </h2>
-               <div className=" w-full flex flex-col lg:flex-row gap-2">
+               <div className=" w-full flex flex-col  lg:flex-row gap-2">
                   <div className="w-full lg:w-1/2">
                      <CopilotInsights
                         setModalOpen={setModalOpen}
