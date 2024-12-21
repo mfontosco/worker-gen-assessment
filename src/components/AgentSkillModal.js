@@ -1,6 +1,7 @@
 import React from 'react';
 import copilot from '../../public/images/copilotIcon.svg';
 import Image from 'next/image';
+import { CiUser } from 'react-icons/ci';
 const AgentSkillModal = ({ isOpen, onClose }) => {
    if (!isOpen) return null;
 
@@ -33,7 +34,7 @@ const AgentSkillModal = ({ isOpen, onClose }) => {
                <div className="space-y-4 p-4 text-[10px] shadow-lg">
                   <p>
                      When{' '}
-                     <span className="text-blue-500 bg-[#e3f7fc] rounded-md p-1 text-[10px] leading-6 no-underline cursor-pointer">
+                     <span className="text-blue-500 bg-[#e3f7fc]  rounded-md p-1 text-[10px] leading-6 no-underline cursor-pointer">
                         any vendor
                      </span>{' '}
                      sends an email with changes to{' '}

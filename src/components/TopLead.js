@@ -9,6 +9,7 @@ import group from '../../public/images/Group.svg';
 import colorProfile from '../../public/images/prof.svg';
 import { RiMailUnreadLine } from 'react-icons/ri';
 import { LuCalendarDays } from 'react-icons/lu';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 export const TopLead = ({ setModalOpen }) => {
    return (
       <div className="shadow-lg rounded-md py-4 px-4 border-10 w-full mt-2 min-h-[300px]">
@@ -35,7 +36,10 @@ export const TopLead = ({ setModalOpen }) => {
                   Copilot hasa pinpointed 20 key leads that show strong purchase
                   intent and are actively engaging.These leads needs your focus
                </h2>
-               <div className=" w-full flex flex-col  lg:flex-row gap-2">
+               <div className="relative w-full flex flex-col  lg:flex-row gap-2">
+                  <div className="bg-white p-2 absolute -right-4 top-[40%] rounded-full">
+                     <MdOutlineKeyboardArrowRight className=" text-[#6279b3]" />
+                  </div>
                   <div className="w-full lg:w-1/2">
                      <CopilotInsights
                         setModalOpen={setModalOpen}

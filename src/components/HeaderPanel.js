@@ -14,12 +14,13 @@ import { IoFilter } from 'react-icons/io5';
 import { MdEditRoad } from 'react-icons/md';
 import { FaShareSquare } from 'react-icons/fa';
 import { BsMicrosoftTeams } from 'react-icons/bs';
+
 const HeaderPanel = () => {
    return (
-      <div className="shadow-lg hidden lg:block py-2 border-2 rounded-md">
-         <div className="hidden  px-2 md:flex items-center rounded-md">
-            <div className="flex items-center gap-2 mr-auto">
-               <h2 className="font-medium text-xs no-wrap text-[#939393]">
+      <headers className="shadow-lg hidden lg:block py-2 border-2 rounded-md">
+         <nav className="  px-2 md:flex items-center rounded-md">
+            <div className="flex items-center cursor-pointer gap-2 mr-auto">
+               <h2 className="font-medium  text-xs no-wrap text-[#939393]">
                   My open leads
                </h2>
                <MdOutlineKeyboardArrowDown
@@ -87,8 +88,8 @@ const HeaderPanel = () => {
                   className="text-white pl-1 cursor-pointer border-5 border-l  "
                />
             </div>
-         </div>
-      </div>
+         </nav>
+      </headers>
    );
 };
 
