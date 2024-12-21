@@ -161,7 +161,7 @@ export default function Table({ onchangeHandler }) {
                            <tbody className="divide-y divide-gray-200 bg-white">
                               {filteredAndSortedPeople.map((person) => (
                                  <tr
-                                    key={person.email}
+                                    key={person.id}
                                     className={
                                        selectedPeople.includes(person)
                                           ? 'bg-gray-50'
