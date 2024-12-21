@@ -17,7 +17,7 @@ import { BsMicrosoftTeams } from 'react-icons/bs';
 
 const HeaderPanel = () => {
    return (
-      <headers className="shadow-lg hidden lg:block py-2 border-2 rounded-md">
+      <div className="shadow-lg hidden lg:block py-2 border-2 rounded-md">
          <nav className="  px-2 md:flex items-center rounded-md">
             <div className="flex items-center cursor-pointer gap-2 mr-auto">
                <h2 className="font-medium  text-xs no-wrap text-[#939393]">
@@ -89,7 +89,7 @@ const HeaderPanel = () => {
                />
             </div>
          </nav>
-      </headers>
+      </div>
    );
 };
 

@@ -160,8 +160,36 @@ export default function Table({ onchangeHandler }) {
                            </thead>
                            <tbody className="divide-y divide-gray-200 bg-white">
                               {filteredAndSortedPeople.map((person) => (
-                                 <tr key={person.id}>
-                                    <td className="relative px-7 sm:w-12 sm:px-6"></td>
+                                 <tr
+                                    key={person.email}
+                                    className={
+                                       selectedPeople.includes(person)
+                                          ? 'bg-gray-50'
+                                          : undefined
+                                    }
+                                 >
+                                    <td className="relative px-7 sm:w-12 sm:px-6">
+                                       {selectedPeople.includes(person) && (
+                                          <div className="absolute inset-y-0 left-0 w-0.5 bg-indigo-600" />
+                                       )}
+                                       <input
+                                          type="checkbox"
+                                          className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                          value={person.email}
+                                          checked={selectedPeople.includes(
+                                             person
+                                          )}
+                                          onChange={(e) =>
+                                             setSelectedPeople(
+                                                e.target.checked
+                                                   ? [...selectedPeople, person]
+                                                   : selectedPeople.filter(
+                                                        (p) => p !== person
+                                                     )
+                                             )
+                                          }
+                                       />
+                                    </td>
                                     <td className="whitespace-nowrap py-4 pr-3 text-xs font-medium text-gray-900">
                                        {person.name}
                                     </td>
